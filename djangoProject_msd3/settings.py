@@ -129,10 +129,10 @@ LOGOUT_REDIRECT_URL = 'home'
 # ]
 
 # STATIC_ROOT = '/static/'
+STATIC ROOT = os.path.join(BASE_DIR, 'static/')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ch.akhil76@gmail.com'
