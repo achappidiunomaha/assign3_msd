@@ -1,0 +1,22 @@
+{% extends 'ski/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .center {
+            text-align:center;
+        }
+    </style>
+    <h2>Ski Equipments</h2>
+    <div class="row">
+        {% for products in products %}
+            <div class="center">
+            <div class="col-sm-4">
+                <a href="{% url 'client:equipment_detail' products.id %}">
+                    <img src="{% if products.product_image %}{{ products.product_image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" width="300" height="300">
+                </a>
+                <a href="{% url 'client:equipment_detail' products.id %}">{{ products.product_name }}</a>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

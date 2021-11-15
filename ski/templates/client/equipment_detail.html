@@ -1,0 +1,31 @@
+{% extends 'ski/base.html' %}
+{% load static %}
+{% block content %}
+    <br>
+    <h2>Product detail</h2>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+                <img src="
+                        {% if products.product_image %}{{ products.product_image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
+                     width="300" height="300">
+                    </div>
+            <div class="'col-sm-8">
+                <h1>{{ products.product_name }}</h1>
+                <br>
+                <p>{{ products.product_description|linebreaks }}</p>
+{#                 <input type="date" class="form-control" id="date" value="{{Orders.|date:"Y-m-d" }}">#}
+                <button type="submit" class="btn btn-secondary"><a href="{% url 'client:checkout' id=products.pk %}" style="color: white;">Place Request</a></button>
+                {#    <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>#}
+                {#    <p class="price">${{ product.price }}</p>#}
+                {#    <p class="price">{{ currencycode }} {{ product.price|mul:exrate }}</p>#}
+                {#    <form action="{% url "cart:cart_add" product.id %}" method="post">#}
+                {#      {{ cart_product_form }}#}
+                {#      {% csrf_token %}#}
+                {#      <input type="submit" value="Add to cart">#}
+                {#    </form>#}
+                {#    {{ product.description|linebreaks }}#}
+
+        </div>
+    </div>
+{% endblock %}

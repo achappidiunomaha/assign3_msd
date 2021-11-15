@@ -4,6 +4,6 @@ from .models import*
 
 admin.site.register(User)
 admin.site.register(Client)
-admin.site.register(Employee)
 admin.site.register(Product)
-admin.site.register(Request)
+# admin.site.register(Request)
+admin.site.register(Order)
